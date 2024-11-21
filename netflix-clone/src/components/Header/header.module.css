@@ -1,0 +1,120 @@
+/* General Styling */
+.header_outer_container {
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding:20px 0;
+  }
+  
+  .header_Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .header_left {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  .logo {
+    margin-right: 10px;
+  }
+  
+  .menuToggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Initially hidden */
+  }
+  
+  .navMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navMenu li {
+    color: white;
+    cursor: pointer;
+  }
+  
+  .iconMenu {
+    display: none; /* Hide icons by default */
+  }
+  
+  /* Hidden dropdown menu for small screens */
+  .menuClosed {
+    display: block;
+  }
+  
+  /* Display dropdown menu when open */
+  .menuOpen {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0;
+  }
+  
+  .menuOpen li {
+    margin: 10px 0;
+    text-align: center;
+  }
+  .iconMenu {
+      display: inline-block;
+      color: white;
+      margin-right: 20px; /* Show icons for larger screens */
+    }
+  /* Responsive Design */
+  @media (max-width: 800px) {
+    .menuToggle {
+      display: block; /* Show burger menu on small screens */
+    }
+  
+    .navMenu {
+      display: none; /* Hide the nav items by default */
+    }
+  
+    .menuOpen {
+      display: flex; /* Show dropdown menu when toggled */
+    }
+  
+    .header_Container {
+      justify-content: space-between;
+    }
+  }
+  
+  @media (min-width: 801px) {
+    .menuToggle {
+      display: none; /* Hide burger menu on larger screens */
+    }
+  
+    .navMenu {
+      display: flex; /* Show nav items in a row */
+      flex-direction: row;
+    }
+  
+    .iconMenu {
+      display: inline-block;
+      color: white;
+      margin-right: 20px; /* Show icons for larger screens */
+    }
+  
+    .menuOpen {
+      display: none; /* Prevent dropdown menu from showing */
+    }
+  }
+  
